@@ -99,10 +99,10 @@ jobs:
           CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
           CONFIG_PACKAGE_luci-app-openclash=y
           CONFIG_PACKAGE_luci-app-zerotier=y
-          CONFIG_PACKAGE_luci-app-oaf=y
-          CONFIG_PACKAGE_appfilter=y
-          CONFIG_PACKAGE_kmod-oaf=y
-          CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y
+          CONFIG_PACKAGE_luci-app-oaf=m
+          CONFIG_PACKAGE_appfilter=m
+          CONFIG_PACKAGE_kmod-oaf=m
+          CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=m
           # CONFIG_PACKAGE_luci-app-accesscontrol is not set
           # CONFIG_PACKAGE_luci-app-nlbwmon is not set
           # CONFIG_PACKAGE_nlbwmon is not set
@@ -195,6 +195,8 @@ jobs:
           mkdir -p ./artifact/
           mv friendlywrt-rk3328/out/*img* ./artifact/
           cp friendlywrt-rk3328/friendlywrt/.config ./artifact/
+          find friendlywrt-rk3328/out -name "*appfilter*.ipk"| xargs -i cp {} ./artifact/
+          find friendlywrt-rk3328/out -name "*oaf*.ipk"| xargs -i cp {} ./artifact/
           zip -r artifact.zip ./artifact/
           release_tag="My-R2S-$(date +%Y-%m-%d-%H-%M)"
           echo "##[set-output name=release_tag;]$release_tag"
