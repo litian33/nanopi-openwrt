@@ -12,14 +12,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    if: github.repository == 'litian/nanopi-openwrt'
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@master
-        with:
-          ref: litian
 
       - name: Initialization Environment
         env:
