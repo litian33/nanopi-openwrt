@@ -12,14 +12,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    if: github.repository == 'klever1988/nanopi-openwrt'
+    if: github.repository == 'litian/nanopi-openwrt'
 
     steps:
 
       - name: Checkout
         uses: actions/checkout@master
         with:
-          ref: master
+          ref: litian
 
       - name: Initialization Environment
         env:
