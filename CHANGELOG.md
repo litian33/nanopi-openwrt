@@ -2,6 +2,46 @@
 # 更新日志
 ###### （如果没有特别说明，更新内容就是上游Lean和Lienol两位大佬的代码更新）
 
+## 2021-03-13
+
+- autoupdate.sh脚本实验性功能：升级固件时自动扩容分区至sd卡最大值
+- 添加Diskman和ddnsto插件
+
+## 2021-03-11
+
+- R2S主频限制预设1.5GHz(你仍然可以解锁至1.6GHz)
+
+## 2021-03-10
+
+- 添加百度云，transmission插件
+- 固定dropbear服务端的host key，这样每次升级固件后连接ssh都不会弹出公钥警告了
+
+## 2021-03-06
+
+- Lan IP固定为192.168.2.1
+
+## 2021-03-05
+
+- R2S恢复添加友善的风扇控制脚本、以及oled显示屏的控制插件
+
+## 2021-03-04
+
+- 固定编译的路径，使编译缓存在forks的编译中仍然有效，fork自定义编译只需30分钟
+
+## 2021-02-27
+
+- 改用Tianling Shen的immortalwrt源码产出固件
+
+## 2020-08-05
+
+- R2S加入了 https://github.com/NateLol/luci-app-oled 支持oled状态显示
+
+![oled](https://github.com/klever1988/nanopi-openwrt/raw/master/assets/oled.jpg)
+
+## 2020-08-04
+
+- 改用Lean大的稳定分支版本 https://github.com/coolsnowwolf/openwrt 进行编译，修复了usb无线网卡的死机问题
+
 ## 2020-03-25
 
 - r2s现已支持在线升级，并且升级能够保存设置，需要通过ssh实施。提醒，脚本只支持升级到minimal系统。
